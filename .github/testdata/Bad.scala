@@ -1,0 +1,1 @@
+case  class Bad  ( int :Int) {   }
