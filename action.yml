@@ -1,5 +1,9 @@
-name: 'Simple Scalafmt'
-description: 'Uses scalafmt-native to format code'
+name: 'scalafmt-native-formatter'
+author: 'Paweł Cembaluk <pawel.cembaluk@gmail.com>'
+description: 'Uses scalafmt-native to format the code'
+branding:
+  icon: 'check-circle'
+  color: 'green'
 inputs:
   conf-path:
     description: 'Path to .scalafmt.conf'
