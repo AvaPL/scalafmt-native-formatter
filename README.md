@@ -1,5 +1,5 @@
 # scalafmt-native-formatter
-An action which uses scalafmt-native to format the code. By default it automatically picks up your scalafmt version from .scalafmt.conf file and runs `scalafmt --list` on your repository. [scalafmt-native](https://scalameta.org/scalafmt/docs/installation.html#native-image) is used for fast startup and improved performance by avoiding JVM.
+An action which uses scalafmt-native to format the code. By default it automatically picks up your scalafmt version from .scalafmt.conf file and runs `scalafmt --list` on your repository. [scalafmt-native](https://scalameta.org/scalafmt/docs/installation.html#native-image) is used for fast startup and improved performance by avoiding JVM. If you have a job for scalafmt check only it is significantly faster than any sbt plugin.
 
 Inspired by [openlawteam/scalafmt-ci](https://github.com/openlawteam/scalafmt-ci)
 
