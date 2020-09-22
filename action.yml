@@ -19,8 +19,6 @@ runs:
     - run: |
         curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
         sudo bash -s -- $(${{ github.action_path }}/version.sh ${{ inputs.conf-path }}) /usr/local/bin/scalafmt-native
-      shell: bash
-    - run: |
         echo "=============================================================================="
         echo "scalafmt-native -c ${{ inputs.conf-path }} ${{ inputs.args }}"
         scalafmt-native -c ${{ inputs.conf-path }} ${{ inputs.args }}
