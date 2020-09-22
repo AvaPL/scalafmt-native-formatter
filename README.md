@@ -25,8 +25,5 @@ There are two action arguments available:
 * (optional) **conf-path** - path to .scalafmt.conf (default: .scalafmt.conf at the root of your repository)
 * (optional) **args** - arguments passed to scalafmt-native (default: `"--list"`)
 
-## Installing with GitHub Marketplace
-Soon (TM)
-
 ## Contributing
 The action is in ***really*** early stage of development. If you want to report an issue or add a new functionality feel free to do so.
