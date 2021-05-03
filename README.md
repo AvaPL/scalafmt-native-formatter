@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Checking the code with scalafmt
-        uses: AvaPL/scalafmt-native-formatter@v0.1.0
+        uses: AvaPL/scalafmt-native-formatter@v0
         with:
           conf-path: path/to/.scalafmt.conf
           args: "--exclude i/am/excluded/Bad.scala --list"
