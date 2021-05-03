@@ -18,7 +18,10 @@ runs:
   steps:
     - run: |
         curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
-        sudo bash -s -- $(${{ github.action_path }}/version.sh ${{ inputs.conf-path }}) /usr/local/bin/scalafmt-native
+        sudo bash -s -- $(grep "version" ${{ inputs.conf-path }} | sed -E "s/version|=|\s*//g") /usr/local/bin/scalafmt-native
+        echo "=============================================================================="
+        echo "Config:"
+        cat ${{ inputs.conf-path }}
         echo "=============================================================================="
         echo "scalafmt-native -c ${{ inputs.conf-path }} ${{ inputs.args }}"
         scalafmt-native -c ${{ inputs.conf-path }} ${{ inputs.args }}
