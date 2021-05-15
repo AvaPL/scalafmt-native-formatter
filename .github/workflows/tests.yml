@@ -5,8 +5,8 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     env:
-      formatTestWorkingDirectory: .github/tests/format-test
-      versionDetectionWorkingDirectory: .github/tests/version-detection-test
+      formatTestWorkingDirectory: .github/test/format-test
+      versionDetectionWorkingDirectory: .github/test/version-detection-test
     steps:
       - uses: actions/checkout@v2
       - name: Format test
