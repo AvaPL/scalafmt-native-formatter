@@ -17,8 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       versionDetectionWorkingDirectory: .github/test/version-detection-test
-    - name: Version detection test
-      uses: ./
-      with:
-        conf-path: ${{ env.versionDetectionWorkingDirectory }}/.scalafmt.conf
-        args: "--list ${{ env.versionDetectionWorkingDirectory }}"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Version detection test
+        uses: ./
+        with:
+          conf-path: ${{ env.versionDetectionWorkingDirectory }}/.scalafmt.conf
+          args: "--list ${{ env.versionDetectionWorkingDirectory }}"
