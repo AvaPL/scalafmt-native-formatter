@@ -5,16 +5,16 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     env:
-      format-test-working-directory: .github/tests/format-test
-      version-detection-working-directory: .github/tests/version-detection-test
+      formatTestWorkingDirectory: .github/tests/format-test
+      versionDetectionWorkingDirectory: .github/tests/version-detection-test
     steps:
       - uses: actions/checkout@v2
       - name: Format test
         uses: ./
         with:
-          conf-path: ${{ format-test-working-directory }}/.scalafmt.conf
-          args: "--exclude ${{ format-test-working-directory }}/Bad.scala --list ${{ format-test-working-directory }}"
+          conf-path: ${{ formatTestWorkingDirectory }}/.scalafmt.conf
+          args: "--exclude ${{ formatTestWorkingDirectory }}/Bad.scala --list ${{ formatTestWorkingDirectory }}"
       - name: Version detection test
         uses: ./
         with:
-          conf-path: ${{ version-detection-working-directory }}/.scalafmt.conf
+          conf-path: ${{ versionDetectionWorkingDirectory }}/.scalafmt.conf
