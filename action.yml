@@ -17,8 +17,9 @@ runs:
   using: "composite"
   steps:
     - run: |
+        version=$(sed -E "s/(\/\/|#).*//g" ${{ inputs.conf-path }} | grep "version" | sed -E "s/version|=|\"|\s*//g")
         curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
-        sudo bash -s -- $(grep "version" ${{ inputs.conf-path }} | sed -E "s/version|=|\s*//g") /usr/local/bin/scalafmt-native
+        sudo bash -s -- $version /usr/local/bin/scalafmt-native
         echo "=============================================================================="
         echo "Config:"
         cat ${{ inputs.conf-path }}
