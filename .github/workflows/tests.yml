@@ -18,3 +18,4 @@ jobs:
         uses: ./
         with:
           conf-path: ${{ env.versionDetectionWorkingDirectory }}/.scalafmt.conf
+          args: "--list ${{ env.formatTestWorkingDirectory }}"
