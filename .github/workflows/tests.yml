@@ -1,0 +1,26 @@
+on: [ push, workflow_dispatch ]
+name: Tests
+
+jobs:
+  format-test:
+    runs-on: ubuntu-latest
+    env:
+      formatTestWorkingDirectory: .github/test/format-test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Format test
+        uses: ./
+        with:
+          conf-path: ${{ env.formatTestWorkingDirectory }}/.scalafmt.conf
+          args: "--exclude ${{ env.formatTestWorkingDirectory }}/Bad.scala --list ${{ env.formatTestWorkingDirectory }}"
+  version-detection-test:
+    runs-on: ubuntu-latest
+    env:
+      versionDetectionWorkingDirectory: .github/test/version-detection-test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Version detection test
+        uses: ./
+        with:
+          conf-path: ${{ env.versionDetectionWorkingDirectory }}/.scalafmt.conf
+          args: "--list ${{ env.versionDetectionWorkingDirectory }}"
