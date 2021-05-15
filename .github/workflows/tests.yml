@@ -12,9 +12,9 @@ jobs:
       - name: Format test
         uses: ./
         with:
-          conf-path: ${{ formatTestWorkingDirectory }}/.scalafmt.conf
-          args: "--exclude ${{ formatTestWorkingDirectory }}/Bad.scala --list ${{ formatTestWorkingDirectory }}"
+          conf-path: ${{ env.formatTestWorkingDirectory }}/.scalafmt.conf
+          args: "--exclude ${{ env.formatTestWorkingDirectory }}/Bad.scala --list ${{ env.formatTestWorkingDirectory }}"
       - name: Version detection test
         uses: ./
         with:
-          conf-path: ${{ versionDetectionWorkingDirectory }}/.scalafmt.conf
+          conf-path: ${{ env.versionDetectionWorkingDirectory }}/.scalafmt.conf
